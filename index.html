@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+  html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.pantalla-completa {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  z-index: 1;
+}
+
+/* Menú flotante arriba a la derecha */
+.menu-flotante {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+.menu-flotante button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #5978f3;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu-flotante button:hover {
+  background-color: #3f5ed3;
+}
+
+
+
+    </style>
+
+ <script>
+  function cambiarPagina(url) {
+    document.getElementById('visor').src = url;
+  }
+</script>
+
+</head>
+
+
+<body>
+
+<div class="menu-flotante">
+   <button onclick="cambiarPagina('caratula-principal.html')">Principal</button>
+  <button onclick="cambiarPagina('transicion-preguntas.html')">Preguntas y respuestas</button> 
+</div>
+
+
+    <iframe  id="visor" src="transicion-preguntas.html"  class="pantalla-completa" frameborder="0"></iframe>
+
+
+
+</body>
+</html>

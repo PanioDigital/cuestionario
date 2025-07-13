@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+ <link rel="stylesheet" href="estilos/style.css" />
+ <link rel="stylesheet" href="estilos/boton-url-micro.css" />
+<link rel="stylesheet" href="estilos/animate-slide.css">
+
+<style>
+
+.flecha {
+  position: fixed;
+  top: 150px;
+  left: 11%;
+  display: flex;
+  gap: 1rem;
+  z-index: 1000;
+  background: transparent;
+}
+
+.flecha button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 80px;
+}
+
+.flecha img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+}
+
+
+
+/* Responsive: en pantallas chicas, reducí el tamaño del botón */
+@media (max-width: 600px) {
+  .boton-imagen {
+    width: 28px;
+  }
+}
+</style>
+
+
+</head>
+<body>
+<div class="flecha">
+  <button onclick="alert('Izquierda')">
+    <img src="imagenes/leftarrow.png" alt="Flecha Izquierda" />
+  </button>
+
+  <button onclick="alert('Derecha')">
+    <img src="imagenes/rightarrow.png" alt="Flecha Derecha" />
+  </button>
+</div>
+
+    <div class="wrap animate pop">
+	<div class="overlay">       
+
+       
+		<div class="overlay-content animate slide-left delay-2">
+
+			<h2 class="animate slide-left pop delay-4 h2-txt" id="texto-pregunta" >¿En qué consiste el proyecto web "Microemprendedores Colón"?</h2>
+		<!-- 	<p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Kingdom: <em>Plantae</em></p> -->
+		</div>
+		
+        <div class="image-content animate slide delay-5"></div>
+		
+
+    <div class="contenedor-miniBoton dots">
+            <button class="btn magnetic btn-pulse"  onclick="window.open(`https://colon.microemprendedores.com.ar`, '_blank')">
+                        <span>colon.microemprendedores.com.ar</span>
+                        <div class="particles-field" id="particleField"></div>
+            </button>
+        </div>
+
+
+<!--     <div class="dots animate">
+			<div class="dot animate slide-up delay-6"></div>
+			<div class="dot animate slide-up delay-7"></div>
+			<div class="dot animate slide-up delay-8"></div>
+		</div>
+ -->
+	</div>
+
+	<div class="text">
+		<p><img class="inset" src="https://assets.codepen.io/4787486/oak_1.jpg" alt="" />Trees are woody perennial plants that are a member of the kingdom <em>Plantae</em>. All species of trees are grouped by their genus, family, and order. This helps make identifying and studying trees easier.</p>
+		<p>Apart from providing oxygen for the planet and beauty when they bloom or turn color, trees are very useful. Certain species of hardwood and softwood trees are excellent for timber, making furniture, and paper.</p>
+		<p>When managed properly, trees are a good source of renewable energy and construction material.</p>
+		
+        <img class="logo" src="imagenes/logo.png" alt="" />
+
+	</div>
+
+
+</div>
+
+
+
+
+<script>  //Efecto de partículas para el botón
+
+    const particleField = document.getElementById('particleField');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.setProperty('--x', `${Math.random() * 200 - 100}px`);
+            particle.style.setProperty('--y', `${Math.random() * 200 - 100}px`);
+            particle.style.animation = `particleFloat ${1 + Math.random() * 2}s infinite`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particleField.appendChild(particle);
+        }
+</script>
+            
+</body>
+</html>
