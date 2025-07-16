@@ -1,17 +1,17 @@
 .btn { 
   /* Colores y fondo */
-  background: linear-gradient(to bottom, #bcbdb9 5%, #cc6060 100%);
-  background-color: #a9d9ec;
-  color: #383434;
-  text-shadow: 0px 1px 0px #035e7a;
-  border: 5px solid #6a718b;
+ /*  background: linear-gradient(to bottom, #eeabab 5%, #c94b4b 100%);  *//* Gradiente de rosado a rojo */
+  background-color: #eae8e8; /* Color de fondo rojo */
+  color: #575c5c; /* Texto blanco para que resalte */
+  text-shadow: 0px 1px 0px #800000; /* Sombra de texto rojo oscuro */
+  border: 11px solid #800000; /* Borde rojo oscuro */
 
   /* Bordes y forma */
   border-radius: 5rem;
 
   /* Tipografía */
   font-family: Arial;
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   letter-spacing: 0.075em;
   line-height: 1em;
   text-decoration: none;
@@ -27,26 +27,120 @@
   transition: all 0.4s ease;
 
   /* Sombras */
-  box-shadow: 3px 4px 0px 0px #57acac;
+  box-shadow: 3px 4px 0px 0px #ded8d8; /* Sombra 3D rojo más oscuro */
+}
+
+/* Clase para posicionar el botón en la parte inferior de la página */
+.btn-fixed-bottom {
+  font-size: 0.9rem; /* Un tamaño base para el texto del botón fijo */
+  position: fixed; /* Lo fijamos al viewport para que siempre esté visible */
+  bottom: 20px; /* Espacio desde el borde inferior */
+  left: 55%; /* Lo movemos a la mitad de la pantalla */
+  transform: translateX(-50%); /* Lo centramos perfectamente */
+  z-index: 1000; /* Para que esté por encima de otros elementos */
+     margin: 0 auto; /* Centra el botón horizontalmente */   
 }
 
 
-.contenedor-miniBoton {
-  display: flex;
-  position: fixed;
-  bottom: 20px; /* o 0 si querés que esté bien al borde */
-  left: 54%;
-  transform: translateX(-50%);
-  z-index: 9999; /* muy alto para asegurar que quede arriba */ 
-  padding: 10px 20px;
-  border-radius: 10px;
+
+.btn-fixed-pral {
+    width:83%;
+    height: 88%;
+    font-size: 1.9rem; /* Tamaño de fuente */
+    font-weight: bold;
+
+    } 
+    
+@media (max-width: 480px) {       
+    .btn-fixed-bottom {            
+       font-size: 0.9em; /* Reduce ligeramente el tamaño de la fuente */         
+       padding: 10px 15px; /* Reduce el padding */      
+    }   
+  }
+ 
+
+/* Media query para pantallas chicas (celulares) */
+@media (max-width: 600px) {
+  .btn-fixed-bottom2 {
+    width: 90%; /* Hacemos que ocupe el 90% del ancho */
+    padding: 0.8rem 1rem; /* Reducimos el padding para que entre más texto */
+    font-size: 1rem; /* Hacemos la letra un poco más grande para que se lea bien */
+  }
 }
 
 
-/* Magnetic Field Button */
+
+/* 1. Pulse Animation */
+
+ .btn-pulse {
+  transform: scale(0.95); /* efecto al presionar */
+  background-color: #f2f5f8;
+} 
+
+.btn-pulse:hover {
+  background-color: #3498db;
+  color: rgb(12, 8, 8);
+  animation: pulse 1s infinite;
+}
+
+.btn-pulse:active {
+  animation: wobble 0.2s;
+   transform: scale(0.95); /* efecto al presionar */
+  background-color: #444;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+/* 2. Wobble Animation */
+
+/* .btn-wobble {
+ background-color: #e74c3c; 
+  color: white;
+}
+ */
+
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-5%) rotate(-1deg);
+  }
+}
+
+
+
+/* Magnetic Field Button --------------------------------------------------------------------
+Efecto de particulas*/
 .magnetic {
 /*   background: #adced8; */
-  border: none;
+  border: 0.1px solid #111111;
   overflow: visible;
 }
 
@@ -73,65 +167,4 @@
   0% { transform: translate(var(--x), var(--y)) scale(0); }
   50% { transform: translate(calc(var(--x) * -1), calc(var(--y) * -1)) scale(1); }
   100% { transform: translate(var(--x), var(--y)) scale(0); }
-}
-
-
-/* 1. Pulse Animation */
-.btn-pulse:hover {
-  background-color: #3498db;
-  color: rgb(12, 8, 8);
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
- .btn-pulse {
-  transform: scale(0.95); /* efecto al presionar */
-  background-color: #2980b9;
-} 
-
-
-/* 2. Wobble Animation */
-
-/* .btn-wobble {
- background-color: #e74c3c; 
-  color: white;
-}
- */
-
-.btn-pulse:active {
-  animation: wobble 0.2s;
-   transform: scale(0.95); /* efecto al presionar */
-  background-color: #444;
-}
-
-@keyframes wobble {
-  0%,
-  100% {
-    transform: translateX(0%);
-  }
-  15% {
-    transform: translateX(-25%) rotate(-5deg);
-  }
-  30% {
-    transform: translateX(20%) rotate(3deg);
-  }
-  45% {
-    transform: translateX(-15%) rotate(-3deg);
-  }
-  60% {
-    transform: translateX(10%) rotate(2deg);
-  }
-  75% {
-    transform: translateX(-5%) rotate(-1deg);
-  }
 }

@@ -14,13 +14,6 @@
 }
 
 
-p {
-	font-size: max(10pt, 2.5vmin);
-	line-height: 1.4;
-	color: #ebe6e6;
-	margin-bottom: 1.5rem;
-}
-
 .wrap {
 	display: flex;
 	flex-wrap: nowrap;
@@ -28,18 +21,9 @@ p {
 	width: 115vmin;
 	height: 95vmin;
 	margin: 2rem auto;
+	/*  */
 	border: 8px solid;
-/* 	border-image: linear-gradient(
-			-50deg,
-			green,
-			#00b300,
-			forestgreen,
-			green,
-			lightgreen,
-			#00e600,
-			green
-		)
-		1; */
+
     border-image: linear-gradient(
         -50deg,
         #8B0000,     /* dark red */
@@ -54,6 +38,11 @@ p {
 	position: relative;
 	overflow: hidden;
 }
+
+.wrapper .wrap {    /* indica que el wrap que esta demtro del weapper tendra este atributo extra */
+	margin-top: 0px;   /* como uso la misma clase en dos divs distintos,a este que esta con las preguntas  */
+}						/* no lo necesito tan abajo */
+
 .overlay {
 	position: relative;
 	display: flex;
@@ -126,20 +115,9 @@ p {
 	transition: 0.3s ease-in-out 0.3s;
 }
 
-.text {
-	display: grid;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 60vmin;
-	height: 100%;
-	padding: 3vmin 4vmin;
-	background: #ee0505;
-	box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.4);
-	overflow-y: scroll;
 
 
-}
+
 .logo {
 /* 	align-content: left;
 	width: calc(0px + 4vw);
@@ -153,7 +131,6 @@ p {
   height: auto;
   margin: 10px; /* opcional: separación del borde */
 }
-
 
 
 .wrap:hover .overlay {

@@ -1,0 +1,63 @@
+/* Flechas de navegacion */
+
+.wrapper {
+  display: flex; /* Alinea flecha y contenedor horizontalmente */
+  align-items: center; /* Centrado vertical si hay diferencia de altura */
+  padding: 1px;
+  box-sizing: border-box;
+  gap: 0px; /* Espacio entre flecha y contenedor */
+}
+
+/* Flecha lateral izquierda */
+.flecha {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.flecha button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 40px; /* Mitad del tamaño anterior */
+  height: 40px;
+}
+
+.flecha img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive: en pantallas chicas, se reduce aún más */
+@media (max-width: 600px) {
+  .flecha button {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.animate__animated.animate__bounce {
+  --animate-duration: 2s;
+}
+
+
+.selector-preguntas {
+  margin-top: 0.5%; /* Separa la lista del switch */
+  margin-bottom: 0.5%; /* Separa la lista del switch */
+  margin-left: 6%; /* Separa la lista del switch */
+ 
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+#lista-preguntas {
+
+  padding: 1px;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  background-color: #f9f9f9;
+}

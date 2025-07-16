@@ -1,0 +1,53 @@
+
+.btn-9 {
+    border-radius: 7px;
+    
+    display: inline-block;
+    transition: all .2s;
+    position: relative;
+   /*  padding: 20px 25px; */    
+   position: relative;
+    top: 0;
+    cursor: pointer;
+  margin:0 20px;
+}
+
+ .btn-9:active {
+            top: 3px;
+       
+            transition: all .2s;
+        }
+
+.boton-comenzar {
+    background-color: transparent;
+    border: none;
+    padding: 0; /* Sacamos el padding para que el botón se ajuste a la imagen */
+    cursor: pointer;
+    margin-top: 0px; /* Espacio entre el texto y el botón */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Para que la animación sea suave */
+}
+
+.boton-comenzar img {
+    width: 20vw; /* Ancho responsive, ajustado para mejor comportamiento */
+    max-width: 130px; /* Corregido: el máximo debe ser mayor que el mínimo */
+    min-width: 80px;  /* Corregido: el mínimo debe ser menor que el máximo */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Evita espacios raros debajo de la imagen */
+}
+
+
+
+.holographic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+/*   height: 100vh; */
+  background: #f70202;
+}
+
+
+.boton-comenzar:hover {
+  transform: scale(1.1); /* Lo agrandamos un poquito más */
+  /* Usamos drop-shadow para que el brillo siga la forma de la imagen y no del botón cuadrado */
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+}

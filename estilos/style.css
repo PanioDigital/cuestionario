@@ -21,8 +21,7 @@ body {
 	min-height: 100vh;
 	display: grid;
 	place-items: center;
-	margin: 0;
-	padding: 0;
+
 	background: linear-gradient(
 		to right,
 	/* 	#008000, verde oscuro
@@ -47,32 +46,35 @@ body {
     position: relative;
 }
 
-.contenido {
+.contenido-cuerpo-principal {
    /*  padding: 10% 0; */
     text-align: center;
     display: flex;
 
     flex-direction: column; /* Uno debajo del otro */
     align-items: center;     /* Centrado horizontalmente */
-      gap: 40px;                /* Espacio entre los elementos */
-     padding: 30px;              
+      gap: 70px;                /* Espacio entre los elementos */
+     padding: 40px;              
    /*  padding: 5% 32% 0% 32%; */
 }
 
 
 
-.logo {
-       width: 90%;
+.logo-img {
+       width: 130%;
   max-width: 1200px;
-    height: 30%;
+    height: 130%;
   max-height: 1200px;
     
 }
 
-
+.logo-container{
+    display: flex; 
+    justify-content: center;
+}
 
 .subtitulo {
-    font-size: 160%;
+    font-size: 170%;
     font-family: sans-serif;
     font-weight: bold;
     color: #009688;
@@ -123,23 +125,6 @@ body {
     height: 100vh;
 }
 
-.btn-siguiente {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ffffff;
-    color: lab(53.67% 78.86 67.37);
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-siguiente:hover {
-    background-color: #ffe5e5;
-}
 
 .pantalla2 {
     display: none;
@@ -161,4 +146,49 @@ body {
     height: 150px;
     padding: 10px;
     font-size: 16px;
+}
+
+
+  .boton-siguiente {
+         background-image: url('/imagenes/boton-siguiente-transp2.png'); /* Usamos ../ para "subir" un nivel desde la carpeta 'estilos' a 'preguntas' y luego entrar a 'imagenes' */
+         background-color: transparent; /* Hacemos el fondo transparente */
+        background-repeat: no-repeat;  /* Evitamos que la imagen se repita */
+        background-position: center;   /* Centramos la imagen */
+        background-size: contain;      /* Hacemos que la imagen entre completa en el botón */
+      
+           width: 70%;     /* Ancho del botón */
+         height: 70%;   /* Alto del botón */
+        border: none;  /* Le sacamos el borde feo que traen los botones por defecto */
+        cursor: pointer; /* Hacemos que aparezca la manito al pasar el mouse */
+        /* vertical-align: middle;  *//* Ayuda a alinear el botón con el texto de al lado */
+        }
+
+.btn-siguiente:hover {
+    background-color: #ffe5e5;
+}
+
+
+
+.text-contenedor-respuestas {
+	/* display: grid; */
+	position: absolute;
+	top: 0;
+	right: 0;
+    width: 60vmin;
+	height: 100%;
+	padding: 3vmin 4vmin;
+	background: #ee0505;
+	box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.4);
+	overflow-y: scroll;
+}
+
+/* texto de las respuestas */
+.text-content {
+    font-size: max(17pt, 2.5vmin);
+	line-height:1.4;
+   /*  font-size: 3.5rem; */
+    color: #0f0f0f;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 50%
 }

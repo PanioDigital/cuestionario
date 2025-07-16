@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio</title>
+
+
+
 
     <style>
 
-  html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
 
-.pantalla-completa {
+
+.cuerpo-iframe {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   border: none;
-  z-index: 1;
+  z-index: 1;  
 }
 
 /* Menú flotante arriba a la derecha */
@@ -29,25 +28,33 @@
   top: 20px;
   left: 20px;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  padding: 10px;
+  /* Un rojo un poco menos saturado y con transparencia */
+  background: rgba(220, 20, 20, 0.9); 
+  backdrop-filter: blur(4px); /* Efecto "vidrio esmerilado" para navegadores modernos */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  padding: 8px;
+  transition: all 0.3s ease;
 }
 
 .menu-flotante button {
-  margin: 5px;
-  padding: 8px 12px;
-  border: none;
-  background-color: #5978f3;
+  margin: 2px;
+  padding: 8px 16px;
+  /* Hacemos el botón transparente con un borde sutil */
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: transparent;
   color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
+  font-weight: 500; /* Un poco más de peso a la fuente */
+  transition: background-color 0.25s, color 0.25s;
 }
 
 .menu-flotante button:hover {
-  background-color: #3f5ed3;
+  /* Invertimos los colores en el hover */
+  background-color: white;
+  color: #d92323;
 }
 
 
@@ -58,20 +65,72 @@
   function cambiarPagina(url) {
     document.getElementById('visor').src = url;
   }
+
+  function comenzarCuestionario() {
+    // Cambia el iframe a la página de preguntas
+    cambiarPagina('transicion-preguntas.html');
+    // Selecciona el radio button de "Cuestionario"
+    document.getElementById('radio-cuestionario').checked = true;
+  }
 </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 </head>
 
 
 <body>
 
-<div class="menu-flotante">
+<!-- <div class="menu-flotante">
    <button onclick="cambiarPagina('caratula-principal.html')">Principal</button>
   <button onclick="cambiarPagina('transicion-preguntas.html')">Preguntas y respuestas</button> 
+</div> -->
+
+<!-- From Uiverse.io by hoshikawamaki --> 
+<div
+  class=" menu-flotante flex space-x-2 border-[3px] border-purple-300 rounded-xl select-none"
+>
+  <label
+    class="radio flex flex-grow items-center justify-center rounded-lg p-1 cursor-pointer"
+  >
+    <input
+      type="radio"
+      name="radio"
+      value=""
+      class="peer hidden"
+      checked=""
+      onclick="cambiarPagina('caratula-principal.html')"
+    />
+    <span
+      class="tracking-widest peer-checked:bg-gradient-to-r peer-checked:from-[blueviolet] peer-checked:to-[violet] peer-checked:text-white text-gray-700 p-2 rounded-lg transition duration-150 ease-in-out"
+      >Principal</span
+    >
+  </label>
+
+  <label
+    class="radio flex flex-grow items-center justify-center rounded-lg p-1 cursor-pointer"
+  >
+    <input 
+    id="radio-cuestionario"
+    type="radio" 
+    name="radio" 
+    value="" 
+    class="peer hidden" 
+    onclick="cambiarPagina('transicion-preguntas.html')"
+    />
+    <span
+      class="tracking-widest peer-checked:bg-gradient-to-r peer-checked:from-[blueviolet] peer-checked:to-[violet] peer-checked:text-white text-gray-700 p-2 rounded-lg transition duration-150 ease-in-out"
+      >Cuestionario</span
+    >
+  </label>
+
+
 </div>
 
 
-    <iframe  id="visor" src="transicion-preguntas.html"  class="pantalla-completa" frameborder="0"></iframe>
+
+
+    <iframe  id="visor" src="caratula-principal.html"  class="cuerpo-iframe" frameborder="0"></iframe>
 
 
 
